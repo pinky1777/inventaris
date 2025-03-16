@@ -34,7 +34,6 @@ require __DIR__.'/auth.php';
 | Barang Routes
 |--------------------------------------------------------------------------
 */
-
 use App\Http\Controllers\BarangController;
 
 Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
@@ -46,10 +45,26 @@ Route::put('/barang/{id}', [BarangController::class, 'update'])->name('barang.up
 Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barang.destroy');
 Route::get('/barang/{id}/print', [BarangController::class, 'print'])->name('barang.print');
 Route::get('/barang/{id}/pdf', [BarangController::class, 'pdf'])->name('barang.pdf');
-
 /*
 |--------------------------------------------------------------------------
-| End-Barang Routes
+| end-Barang Routes
 |--------------------------------------------------------------------------
 */
+/*
+|--------------------------------------------------------------------------
+| Kategori Routes
+|--------------------------------------------------------------------------
+*/
+use App\Http\Controllers\KategoriController;
 
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('/kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
+Route::post('/kategori', [KategoriController::class, 'store'])->name('kategori.store');
+Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit'])->name('kategori.edit');
+Route::put('/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+Route::delete('/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+/*
+|--------------------------------------------------------------------------
+| end-Kategori Routes
+|--------------------------------------------------------------------------
+*/
